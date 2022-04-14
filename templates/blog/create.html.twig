@@ -1,0 +1,17 @@
+{% extends 'base.html.twig'  %}
+{%form_theme formArticle 'bootstrap_5_layout.html.twig' %}
+{% block body %}
+<h1>Création d'un article</h1>
+
+{{form_start(formArticle)}}
+
+{{form_row(formArticle.title,{'attr':{'palceholder':"titre de l'article"}}) }}
+{{form_row(formArticle.content,{'attr':{'palceholder':"contenu de l'article"}}) }}
+{{form_row(formArticle.image,{'attr':{'palceholder':"image"}}) }}
+
+
+
+     
+
+{{form_end(formArticle) }}
+{% endblock %}
