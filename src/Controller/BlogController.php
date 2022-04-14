@@ -15,9 +15,7 @@ class BlogController extends AbstractController
     #[Route('/blog', name: 'app_blog')]
     public function index(ManagerRegistry $doctrine , ArticleRepository $repo): Response
     {
-
-       
-        $articles = $repo->findAll('Titre de l\'article');
+        $articles = $repo->findAll('Titre de l\'article');// trouver les articles
          
         return $this->render('blog/index.html.twig', [
             'controller_name' => 'BlogController',
@@ -42,10 +40,14 @@ class BlogController extends AbstractController
 
 
 
-    #[Route('/blog/article/12', name: 'blog_show')]
+    #[Route('/blog/{id}', name: 'blog_show')]
     public function show($id,ManagerRegistry $doctrine , ArticleRepository $repo)
 
-    { $article = $repo->find($id); 
+    {
+      // $article = new Article();
+         $article = $repo->find($id); 
         return $this->render('blog/show.html.twig',['article'=>$article]);
+        
+        
      }
 }

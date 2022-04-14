@@ -2,10 +2,10 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Article;
+
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-
+use App\Entity\Article;
 
 class ArticleFixtures extends Fixture
 {
@@ -14,7 +14,7 @@ class ArticleFixtures extends Fixture
         for ($i=1 ; $i<=10; $i++)
         {
             $article = new Article();
-            $article->setTitle("titre de l'article n .$i")
+            $article->setTitle("Ici un article avec  n .$i")
                      ->setContent("<p>contenu de l'article n .$i </p>")
                      ->setImage("http://via.placeholder.com/350x150")
                      ->setCreatedAt(new \DateTimeImmutable());
