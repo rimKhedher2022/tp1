@@ -78,7 +78,7 @@ class BlogController extends AbstractController
 
                         if (!$article->getId())
                         {
-                            $article->setCreatedAt(new \DateTimeImmutable());
+                            //$article->setCreatedAt(new \DateTimeImmutable());
                         }
 
                         
